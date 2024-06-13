@@ -28,6 +28,15 @@ app.post("/signup", async (req, res) => {
     res.json({ "status": "success" })
 })
 
+app.post("/login",(req,res)=>{
+    let input = req.body
+    blogmodel.find({"email":req.body.email}).then(
+        (response) => {
+            console.log(response)
+    }
+    ).catch()
+})
+
 app.listen(8080, () => {
     console.log("Server Connnected")
 })
